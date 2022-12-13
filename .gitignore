@@ -350,3 +350,4 @@ MigrationBackup/
 .ionide/
 .vscode/
 .stickytest/
+stickytest.html
