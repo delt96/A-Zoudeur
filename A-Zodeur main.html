@@ -2,20 +2,34 @@
 <html lang="Ko">
   <head>
     <title>1206 연습용</title>
-    <link type="text/css" href="./css/A-zodeur.css" rel="stylesheet" />
+    <link href="./css/A-zodeur.css" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <header class="상단">
+    <header class="header">
       <img class="logo" src="../A-zodeur/css/사진/logo.png" />
       <div class="Main_Name">
         A-Zoduer
       </div>
+      <div class="headRightBox">
       <div class="loginBox">
         <a class="signUp" href="/A-Zodeur 회원가입.html">회원가입</a>
         <a class="login" href="/A-Zodeur 로그인.html">로그인</a>
       </div>
+      <table class="userInter">
+        <tr>
+          <!-- 스크립트로 유저 이름 가져오기 -->
+          <td class="userNameText">이범수 <span class="userSubscribe"> 구독중</span></td> 
+          <!-- 스크립트로 구독 정보 가져오기 -->
+          <td class="nextDeliveryDate">다음배송일자</td>
+        </tr>
+        <!-- 마이페이지로 넘어가기 -->
+        <tr>
+        <td colspan="2" ><input type="button"  class="MyPageButton" onclick=" " value="마이페이지로 가기"></button></td>
+        </tr>
+      </table>
+    </div>
     </header>
     <div class="main"></div>
     <div class="하단"></div>
