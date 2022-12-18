@@ -1,7 +1,7 @@
 
 body{
   width: 100vw;
-  height: 100vh;
+  height: auto;
   display: grid;
   grid-template-columns: 11fr 1fr;
   grid-template-rows: 250px 50px auto 150px;
@@ -31,8 +31,8 @@ header {
 main {
   width: 100%;
   /* 경계구분용 #dac1a774*/
-  background-color: #white; 
-  grid-area: main;
+  background-color: white; 
+  grid-area : main;
   /* display: grid;
   grid-template-columns: (12,120px);
   grid-gap: 10px; */
@@ -40,8 +40,8 @@ main {
 }
 aside{
   grid-area: side;
-  /*경계구분용 */
-  background-color: #adb96c52;
+  /*경계구분용 #adb96c52 */
+  display: flex;
 }
 footer{
   grid-area: footer;
@@ -133,20 +133,26 @@ footer{
   -webkit-text-stroke: white 0.1px;
   
 }
+
 .menu{
-  background-color: rgba(128, 128, 128, 0.30);
+  max-height: max-content;
+  background-color: rgba(128, 128, 128, 0.2);
   grid-area: menu;
   position: sticky;
-  top:0px
+  top:0px;
+  
+
 }
 .menu ul{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   text-align: center;
+  padding: 0;
 }
 .menuT{
 
   display: inline-block;    
+  
 }
 .menuT a:link, .menuT a:visited{
   color: black;
@@ -154,8 +160,36 @@ footer{
 }
 .menuT a:hover{
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
+.SubscribeBox{
+display: flex;
+flex-direction: column-reverse;
+
+}
+.SubscribeButton{
+  background-color: rgba(100, 148, 237, 0.712);
+  font-size: 0.8rem;
+  font-weight: 400px;
+  width: 7vw;
+  height: 5vh;
+  border-radius: 20%;
+  border: white;
+  cursor: pointer;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
+  position: sticky;
+  bottom: 25px;
+  
+  }
+.SubscribeButton:hover{
+  background-color: rosybrown;
+  color: white;
+  font-weight: bold;
+  transform: scale(1.1);
+  transform: translateY(-5px);
+  
+}
+
 /* 회원가입 */
 .제출버튼 {
   width: 100px;
