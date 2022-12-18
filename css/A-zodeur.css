@@ -54,8 +54,8 @@ footer{
   flex: none;
 }
 .loginBox {
-  padding: 20px;
-  margin-right: -5px;
+  padding: 20px 30px;
+  margin-right: -20px;
   max-width: 250px;
   width: 250px;
   height: 50px;
@@ -173,7 +173,7 @@ flex-direction: column-reverse;
   font-weight: 400px;
   width: 7vw;
   height: 5vh;
-  border-radius: 20%;
+  border-radius: 20px;
   border: white;
   cursor: pointer;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
@@ -186,10 +186,38 @@ flex-direction: column-reverse;
   color: white;
   font-weight: bold;
   transform: scale(1.1);
-  transform: translateY(-5px);
-  
+  transform: translateY(-5px); 
 }
+.mainPhotoSticky{
+  padding: 0 0 0 50px;
+  height: 180vh;
 
+
+}
+.mainPhoto1{
+  width: 40vw;
+  height: 45vh;
+  object-fit: cover;
+  position: sticky;
+  padding: 20vh 0 0 0;
+  top: 0px;
+}
+.subPhotoGather{
+  padding: 30vh 0 0 0;
+}
+.subPhoto1, .subPhoto2, .subPhoto3{
+  width: 40vw;
+  height: 20vh;
+  padding: 0 0 40vh 0 ;
+  object-fit: cover;
+}
+.mainContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+
+
+}
 /* 회원가입 */
 .제출버튼 {
   width: 100px;
