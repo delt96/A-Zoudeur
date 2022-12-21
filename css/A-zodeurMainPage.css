@@ -241,11 +241,11 @@ footer {
 }
 .fixed {
   left: 0px;
-  top: 100px;
+  top: 11vh;
   margin: 0px;
   width: 500vw;
   max-height: 1080px;
-  height: 100vh;
+  height: 1080px;
   padding: 0px;
   box-sizing: border-box;
   position: fixed;
@@ -287,12 +287,3 @@ grid-template-columns: repeat(3, 1fr);
   
 }
 
-/* 회원가입 */
-.제출버튼 {
-
-  width: 00px;
-  height: 500px;
-  background-color: #aeb96c;
-  border: 0px;
-  border-radius: 15px;
-}

@@ -4,65 +4,48 @@
     <title>A-Zodeur 회원가입페이지</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./css/A-zodeur.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="./css/A-zodeut signUp.css" rel="stylesheet" />
     <title>회원가입 홈페이지</title>
   </head>
   <body>
-    <div class="main">
-      <ul class="">
-        <li>
-          <div class="">이름을 입력해주세요.</div>
-        </li>
-        <li>
-          <input type="text" name="newName" />
-        </li>
-        <li>
-          <div class="">비밀번호를 입력해주세요.</div>
-        </li>
-        <li>
-          <input type="password1" name="newpassword1" />
-        </li>
-        <li>
-          <div class="">비밀번호를 재확인</div>
-        </li>
-        <li>
-          <input type="password2" name="newpassword2" />
-        </li>
-        <li>
-          <div class="" type="text">생년월일을 입력하세요.</div>
-        </li>
-        <input type="date" name="date_of_birth" />
-        <li>
-          <div class="">성별을 선택해주세요.</div>
-        </li>
-        <li>
-          <input type="radio" name="gender" value="0" />
-          남
-          <input type="radio" name="gender" value="1" />
-          여
-        </li>
-        <li>
-          <div class="">본인확인이메일을 적어주세요.</div>
-        </li>
-        <li>
-          <input type="text" name="newMail" />@<select name="otherMail">
-            <option value="gmail.com">gmail.com</option>
-            <option value="naver.com">naver.com</option>
-            <option value="daum.net">daum.net</option>
-          </select>
-        </li>
-
-        <li>
-          <form action="./A-Zodeur main.html" method="get" name="회원가입완료">
-            <br />
-            <button
-              class="제출버튼"
-              type="submit"
-              name="회원가입완료"
-            />제출하기
-          </form>
-        </li>
-      </ul>
-    </div>
+    <main>
+      <form action="./A-Zodeur main.html" method="get" name="회원가입완료">
+      <div>
+        <p class="text mainText">회원가입 페이지</p>
+        <div class="signUpTable">
+          <ul class="list">
+            <li><div class="text">이름을 입력해주세요.</div></li>
+            <li><input class="" type="text" name="newName" placeholder="이름을 입력해주세요." size="20" focus></li>
+            <li><div class="text"><br><br>비밀번호를 입력해주세요.</div></li>
+            <li><input class=""type="password" name="newPassword1" placeholder="비밀번호를 입력해주세요." size="30"/></li>
+            <li><div class="l text">비밀번호 재확인</div></li>
+            <li><input class=""type="password" name="newPassword2" placeholder="비밀번호를 다시 입력해주세요."  size="30"/></li>
+            <li><br><div class="text" type="text">생년월일을 입력하세요.</div></li>
+            <li><input type="date" name="date_of_birth" /></li>
+            <li><div class="text"><br><br>성별을 선택해주세요.</div></li>
+            <li><input type="radio" name="gender" value="0" />남 &nbsp;&nbsp;&nbsp;
+              <input type="radio" name="gender" value="1" />여</li>
+            <li><div class="text"><br><br>본인확인이메일을 적어주세요.</div></li>
+            <li>
+              <input type="text" name="newMail" /> @ <select name="otherMail">
+                <option value="gmail.com">gmail.com</option>
+                <option value="naver.com">naver.com</option>
+                <option value="daum.net">daum.net</option>
+              </select>
+            </li>
+            <li>
+              <br/><br>
+              <button class="submitButton"type="submit"name="회원가입완료"/>제출하기
+            </li>
+          </ul>
+        </div>
+      </form>
+        <script>
+          
+        </script>
+      </div>
+    </main>
   </body>
 </html>
