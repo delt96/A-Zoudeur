@@ -1,9 +1,12 @@
+html{
+  scroll-behavior: smooth;
+}
 body {
   width: 100vw;
   height: auto;
   display: grid;
   grid-template-columns: 11fr 1fr;
-  grid-template-rows: 250px 50px auto 150px;
+  grid-template-rows: 250px 65px auto 170px;
   grid-template-areas:
     "header header"
     "menu menu"
@@ -12,6 +15,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "나눔스퀘어 ac";
+  overflow-x: hidden;
+  
 }
 ::-webkit-scrollbar {
   display: none;
@@ -20,14 +25,14 @@ ul {
   list-style-type: none;
 }
 header {
-  width: 100%;
+  width: 100vw;
   max-height: 250vmin;
   background-color: #e4e0d9;
   display: flex;
   grid-area: header;
 }
 main {
-  width: 100%;
+  width: 100vh;
   /* 경계구분용 #dac1a774*/
   background-color: white;
   grid-area: main;
@@ -43,6 +48,7 @@ aside {
 footer {
   grid-area: footer;
   background-color: #e4e0d9;
+  z-index: 2;
 }
 
 .Main_Name,
@@ -80,12 +86,7 @@ footer {
   font-weight: bold;
   border-radius: 15px;
 }
-.loginFont:hover {
-  box-shadow: 0 0 3px black;
-}
-.signUpFont:hover {
-  box-shadow: 0 0 3px black;
-}
+
 
 .MyPageButton {
   display: block;
@@ -139,11 +140,13 @@ footer {
 }
 
 .menu {
+  width: 100vw;
   max-height: max-content;
   background-color: rgba(128, 128, 128, 0.2);
   grid-area: menu;
   position: sticky;
   top: 0px;
+  z-index: 1;
 }
 .menu ul {
   display: grid;
@@ -152,6 +155,7 @@ footer {
   padding: 0;
 }
 .menuT {
+  font-size: 1.2rem;
   display: inline-block;
 }
 .menuT a:link,
@@ -166,6 +170,7 @@ footer {
 .SubscribeBox {
   display: flex;
   flex-direction: column-reverse;
+  z-index: 1;
 }
 .SubscribeButton {
   background-color: rgba(100, 148, 237, 0.712);
@@ -179,7 +184,7 @@ footer {
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.3);
   position: sticky;
   bottom: 25px;
-
+  z-index: 1;
 }
 .SubscribeButton:hover {
   background-color: rosybrown;
@@ -194,7 +199,7 @@ footer {
 }
 .mainPhoto1 {
   width: 40vw;
-  height: 45vh;
+  height: 52vh;
   border-radius: 15px;
   object-fit: cover;
   position: sticky;
@@ -216,14 +221,77 @@ footer {
   min-width: 600px;
 }
 .mainContainer {
+  width: 90vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: nowrap;
 }
+.baesong-wrap{
+  display: flex;
+  position: relative;
+  width: 500vw;
+  height: 100vh;
+  /* transition: .3s ease-in; */
+
+}
+.baesong{
+  top: 100px;
+  position: relative;
+}
+.fixed {
+  left: 0px;
+  top: 100px;
+  margin: 0px;
+  width: 500vw;
+  max-height: 1080px;
+  height: 100vh;
+  padding: 0px;
+  box-sizing: border-box;
+  position: fixed;
+
+  
+}
+.img-box{
+  margin-left: 35vw;
+  
+}
+.info{
+display: grid;
+font-size: 0.9rem;
+grid-template-columns: repeat(3, 1fr);
+
+}
+.footerRight{
+  text-align: right;
+  padding: 0px 30px 0px 0px;
+}
+.footerCenter {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+}
+.footerLeft{
+  font-size: 1.1rem ;
+  font-weight: bold;
+  text-align: center;
+}
+.info a:visited, .info a:link{
+  color: black;
+  text-decoration: none;
+}
+.info a:hover{
+  color: green;
+  -webkit-text-stroke: 1px rgba(245, 245, 245, 0.214);
+
+  
+}
+
 /* 회원가입 */
 .제출버튼 {
-  width: 100px;
-  height: 50px;
+
+  width: 00px;
+  height: 500px;
   background-color: #aeb96c;
   border: 0px;
   border-radius: 15px;

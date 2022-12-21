@@ -2,28 +2,22 @@
 <html lang="Ko">
   <head>
     <title>1206 연습용</title>
-    <link href="./css/A-zodeurMainPage.css" rel="stylesheet" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./css/A-Zodeur.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link href="./css/A-zodeurMainPage.css" rel="stylesheet" />
   </head>
-  <body>
+  <body id="bodyId">
     <div class="menu">
       <ul class="menuList">
-        <li class="menuT"><a href="#">Menu1</a></li>
-        <li class="menuT"><a href="#">Menu2</a></li>
-        <li class="menuT"><a href="#">Menu3</a></li>
-        <li class="menuT"><a href="#">Menu4</a></li>
+        <li class="menuT"><a href="#main">Top</a></li>
+        <li class="menuT"><a href="#target2">Middle</a></li>
+        <li class="menuT"><a href="#footer">Bottom</a></li>
+        <li class="menuT"><a href="#">Store</a></li>
       </ul>
     </div>
-    <header class="main">
-      <span
-        ><a href="/A-Zodeur main.html"
-          ><img
-            src="../A-zodeur/css/사진/logo.png"
-            class="logo"
-            alt="메인로고" /></a
-      ></span>
+    <header id="main">
+      <span><a href="./A-Zodeur main.html"><img src="../A-zodeur/css/사진/logo.png"class="logo"alt="메인로고" /></a></span>
       <div class="Main_Name">A-Zoduer</div>
       <div class="headRightBox">
         <div class="loginBox">
@@ -69,28 +63,46 @@
           <img class="subPhoto3" src="../A-zodeur/css/사진/mola/A-Zodeur3.png"/><br />
         </div>
       </div>
+      <div id="target2"></div>
       <div class="baesong-wrap">
-        <div id="baesong">
-          <br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1
-          <br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1
-          <br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1
-          <br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1
-          <br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1
-          <br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1
-          <img class=".img-box" src="#">
-          <img class=".img-box" src="#">
-          <img class=".img-box" src="#">
-          <img class=".img-box" src="#">
-          <img class=".img-box" src="#">
+        <div class="baesong" >
+          <img class="img-box" src="./css/사진/mola/photo1.png" >
+          <img class="img-box" src="./css/사진/mola/photo2.png">
+          <img class="img-box" src="./css/사진/mola/photo3.png">
+          <img class="img-box" src="./css/사진/mola/photo4.png">
+          <img class="img-box" src="./css/사진/mola/photo5.png">
         </div>
-    </div>
-      <br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1
-      <br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1
-      <br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1
-      <br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1
-      <br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1
-      <br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1<br />1
+      </div>
+      <!-- 650 -->
+      <div style="height: 650vh;"></div>
     </main>
-    <footer></footer>
+    <script src="./css/A-Zodeur.js"></script>
+    <footer>
+      <div class="info" id="footer">
+        <div>
+          <div class="footerLeft">
+            <br><a href="#">
+            FAQ</a>
+          </div>
+        </div>
+        <div>
+          <div class="footerCenter">
+            <br><a href="#">
+            고객지원 </a>
+          </div>
+        </div>
+        <div class="footerRight">
+          <br/>
+          <div style="font-weight: bold; font-size: 1rem;">A-Zodeur 대표 : 이범수 </div>
+          <br>
+          <div> 사업자 등록번호 : 000-000-00000</div>
+          <div>대표주소 : 서울시 마포구 동교로 000 1층  </div> 
+          <div>대표전화 : 02-000-0000</div>
+          <br>
+          <div>Copyright ©A-Zdoeur.All Rights Reserved.</div>
+        </div>
+      </div>
+    </footer>
   </body>
-</html>
+  </html>
+  

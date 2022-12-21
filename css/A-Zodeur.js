@@ -1,31 +1,18 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-function horizontalScroll(){
-  let target = document.querySelector('#baesong');
-  let timeline =gsap.timeline({
-    scrollTrigger:{
-      trigger : target,
-      start: function start(){
-        return "top top";
-      },
-      end: function end(){
-        return "+=".concat(target.offsetWidth, "px");
-      },
-      scrub: 1, 
-      pin : true,
-      ease: 'none'
-    }
-  });
-  timeline.addLabel('horizon').fromTo("#target",{
-    xPercent: 0,
-    x:'0'
-  }, {
-    xPercent: -100,
-    x:'100vw',
-    ease : 'none',
-    delay:0.05
-  }).fromTo('#target',{
-    delay:0
-  },{
-    delay:0.01
-  }, 'horizon=+0.15');
-}
+
+window.addEventListener("scroll", (e) => {
+  // console.log(window.scrollY);
+  const target = document.querySelector(".baesong-wrap");
+  const body = document.querySelector("#bodyId")
+  const trX1 =scrollY
+  if(window.scrollY<2100)
+  target.classList.remove("fixed");
+  if (window.scrollY >= 2280) {
+    target.classList.add("fixed");
+    target.style.transform = `translate(-${trX1-2280}px,0px)`;
+  }
+  // if (window.scrollY >= 7500) {
+  //   let thisScroll = document.querySelector(this).scrollTop(); 
+  //   console.log("ts="+thisScroll)
+  //    target.classList.remove("fixed");
+  // }
+});
