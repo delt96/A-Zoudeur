@@ -41,3 +41,22 @@ li{
   font-size: 1.6rem;
   font-weight: bold;
 }
+#noneNameText {
+  margin-top: 4px;
+  color: red;
+  font-size: 0.9rem;
+  display: none;
+}
+#nonePwText{
+  margin-top: 4px;
+  color: red;
+  font-size: 0.9rem;
+  display: none;
+}
+#nonePwTextCheck{
+  margin-top: 4px;
+  color: red;
+  font-size: 0.9rem;
+  display: none;
+}
+
