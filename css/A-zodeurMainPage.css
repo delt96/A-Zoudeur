@@ -282,8 +282,10 @@ grid-template-columns: repeat(3, 1fr);
 }
 .info a:hover{
   color: green;
-  -webkit-text-stroke: 1px rgba(245, 245, 245, 0.214);
-
-  
+  -webkit-text-stroke: 1px rgba(245, 245, 245, 0.214);  
+}
+strong{
+  font-size: 1rem;
+  padding: 5px;
 }
 
