@@ -1,0 +1,61 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.frame{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main{
+  width: 500vw;
+  height: 100vh;
+
+
+}
+#photoGrid{
+  background-color: ;
+  display: grid;
+  grid-template-columns: repeat(6,150px);
+  grid-template-rows: repeat(6,130px);
+  grid-gap: 10px;
+  grid-template-areas:
+  "photo1 photo1 photo1 photo1 photo2 photo2"
+  "photo1 photo1 photo1 photo1 photo2 photo2"
+  "photo1 photo1 photo1 photo1 photo2 photo2"
+  "photo1 photo1 photo1 photo1 photo2 photo2"
+  "photo4 photo4 photo3 photo3 photo3 photo3"
+  "photo4 photo4 photo3 photo3 photo3 photo3";
+}
+.photo1{
+  grid-area: photo1;
+  object-fit: contain;
+  width: 630px;
+  height:550px;
+}
+.photo2{
+  grid-area: photo2;
+  object-fit: cover;
+  width: 310px;
+  height: 550px;
+}
+.photo3{
+  grid-area: photo3;
+  object-fit: cover;
+  width: 630px;
+  height: 270px;
+}
+.photo4{
+  grid-area: photo4;
+  width: 310px;
+  height: 270px;
+}
+#photoGrid img{
+  cursor: pointer;
+}
+#photoGrid img:hover{
+  scale: 1.1;
+  z-index: 3;
+}

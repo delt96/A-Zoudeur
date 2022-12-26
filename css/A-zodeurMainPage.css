@@ -108,7 +108,7 @@ footer {
   border-radius: 10px;
   width: 300px;
   height: 130px;
-  display: none;
+  display: span;
 }
 .headRightBox {
   max-width: 320px;
