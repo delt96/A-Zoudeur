@@ -1,0 +1,72 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+header{
+  margin-left: 5vw;
+  margin-top: 5vh;
+  width: 80%;
+  height: 100%;
+}
+main{
+  width: 95vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.selectBox{
+  /* background-color: gray; */
+  display: grid;
+  grid-template-columns: repeat(7,10vw);
+  grid-row-gap: 20vh;
+  grid-column-gap: 10px;
+  grid-template-rows: repeat(2,20vh);
+  grid-template-areas:
+  "citrus . green . herb . floral"
+  ". whiteMusk  . vanilla   . woody .";
+}
+.citrus{
+  /* background-color: orange; */
+  grid-area: citrus;
+  object-fit: contains;
+}
+.green{
+  /* background-color: greenyellow; */
+  grid-area: green;
+  object-fit: contains;
+}
+.herb{
+  /* background-color: green; */
+  grid-area: herb;
+  object-fit: contains;
+}
+.floral{
+  /* background-color: pink; */
+  grid-area: floral;
+  object-fit: contains;
+}
+.vanilla{
+  /* background-color: bisque; */
+  grid-area: vanilla;
+  object-fit: contains;
+}
+.whiteMusk{
+  /* background-color: yellow; */
+  grid-area: whiteMusk;
+  object-fit: contains;
+}
+.woody{
+  /* background-color: brown; */
+  grid-area: woody;
+  object-fit: contains;
+}
+.submitButtonBox{
+  position: absolute;
+  right: 5vw;
+  bottom: 10vh;
+}
+.submitButton{
+  border-radius: 15px;
+  border: white 1px solid;
+}

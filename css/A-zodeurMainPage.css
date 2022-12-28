@@ -6,7 +6,7 @@ body {
   height: auto;
   display: grid;
   grid-template-columns: 11fr 1fr;
-  grid-template-rows: 250px 65px auto 170px;
+  grid-template-rows: 250px 65px auto 175px;
   grid-template-areas:
     "header header"
     "menu menu"
@@ -174,10 +174,10 @@ footer {
 }
 .SubscribeButton {
   background-color: rgba(100, 148, 237, 0.712);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 400px;
   width: 7vw;
-  height: 5vh;
+  height: 7vh;
   border-radius: 20px;
   border: white;
   cursor: pointer;

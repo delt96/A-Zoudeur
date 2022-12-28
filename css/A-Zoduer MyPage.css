@@ -11,8 +11,10 @@ header{
   margin-left: 1vw;
   margin-bottom: 30px;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row;
   right: 8vw;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 .mainGrid{
   display: grid;
@@ -101,4 +103,10 @@ a:link{
 a:hover{
   font-weight: bold;
 
+}
+.home{
+  width: 4vw;
+  height: 4vh;
+  object-fit: contain;
+  cursor: pointer;
 }
