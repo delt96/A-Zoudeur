@@ -139,7 +139,7 @@ main{
   object-fit: cover;
 
 } */
-.imgPerfume, .imgETC, .imgHandCream{
+.imgPerfume, .imgEtc, .imgHandCream{
   margin-top: 50px;
   justify-content: center;
   align-items:center ;
@@ -160,7 +160,7 @@ main{
   height: 100%;
   object-fit: contain;
 }
-.itemETC{
+.itemEtc{
   width: 90%; 
   height: 90%;
   object-fit: contain;
@@ -170,3 +170,19 @@ main{
   right: 0;
   top:90vh;
 }
+.itemPerfumeName, .itemHandCreamName, .itemEtcName{
+  font-size: 20px;
+  font-weight: bold;
+}
+.itemPerfumePeople, .itemHandCreamPeople, .itemEtcPeople, .itemEtcPrice,.itemPerfumePrice, .itemHandCreamPrice{
+  font-size: 16px;
+}
+.textBox{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly
+}
+
+

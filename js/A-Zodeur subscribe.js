@@ -6,7 +6,22 @@
 //   console.log("변경")
 //   $(".Explanation").css("display", "none")
 // }
+  function reset () {
+    $("#citrus").removeAttr("checked");
+    $("#green").removeAttr("checked");
+    $("#herb").removeAttr("checked");
+    $("#floral").removeAttr("checked");
+    $("#vanilla").removeAttr("checked");
+    $("#whiteMusk").removeAttr("checked");
+    $("#woody").removeAttr("checked");
+    // const perfume = ["citrus", "green","herb", "floral", "vanilla", "whiteMusk", "woody" ]
+    // for(let c of perfume)
+    // {
+    //   $(`#${c}`).removeAttr("checked")
+    // }
 
+  
+}
 $(document).ready(function(){
   $(".help").hover(function(){
     $(".Explanation").css("display","block")
@@ -58,7 +73,9 @@ $(document).ready(function(){
 
   $(".selectBox img, radio").on("click",function(e){
     const alt= e.target.alt
+    reset();
     $(`#${alt}`).attr("checked", true);
+    // for()
 
   })
 })

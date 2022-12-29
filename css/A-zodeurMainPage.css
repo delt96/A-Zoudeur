@@ -288,4 +288,23 @@ strong{
   font-size: 1rem;
   padding: 5px;
 }
-
+.mail{
+  display: flex;
+  background-color: gray;
+  border-radius: 10px;
+  width: 300px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 170px;
+  display: none;
+  color: white;
+}
+#mailCopy{
+  opacity: 0;
+}
+.copyText{
+  font-size: 15px;
+  display: none;
+}
