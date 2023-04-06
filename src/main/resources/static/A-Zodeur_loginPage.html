@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="Ko">
+  <head>
+    <title>
+      A-Zodeur 로그인 페이지
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/A-Zodeur_loginPage.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+      var login = async function () {
+        const azodeurId = $("#azodeurId").val();
+        const azodeurPw = $("#azodeurPw").val();
+        try{
+          await $.ajax({
+            url : "/login",
+            method : "post",
+            data : { azodeurId, azodeurPw }
+          })
+          await sessionStorage.setItem('isLogin', true);
+          await history.back();
+        }catch(err){
+          if(err.status===403){
+            sessionStorage.setItem('isLogin', true);
+            location.href = "/index.html"
+          }
+          if(err.status===409)
+            alert("로그인 실패")
+        }
+      }
+        $(document).ready( async function (){
+        try{
+        const isLogin = await $.ajax('is_login');
+        if(isLogin == true)
+          location.href="/index.html";
+        }catch(err) {
+          console.log(err)
+        }
+        $(".enterBox").on("click", login)
+
+        $(".login_table").on("keyup", function (key){
+          if(key.keyCode ===13) login()
+        })
+      })
+    </script>
+  </head>
+
+  <body>
+    <main> 
+      <span><a href="index.html"><img src="./css/사진/mola/perfume1.png" id="loginPhoto" alt="mainlogo"></a></span>
+      <div class="main">
+        <div class="Text"><p>A-Zodeur에 오신 것을 환영합니다</p></div>
+      <div class="tableBox">
+<!--      <form action="/login" method="post" name="member">-->
+        <table class="login_table">
+          <tr>
+            <td><div class="userId">아이디:</div></td>
+            <td><input type="text" class="form-control" id="azodeurId" name="azodeurId" size="20" maxlength="10" placeholder="아이디를 입력하세요." autofocus/></td>
+            <td rowspan="2"><button class="enterBox" type="submit" />enter</td>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+            <td><div class="userPassWard">패스워드 :</div>  </td>
+            <td><input id="azodeurPw" class="form-control" type="password" name="azodeurPw" size="20" maxlength="15" placeholder="비밀번호를 입력하세요." /> </td>
+          </tr>
+        </table>
+<!--      </form>-->
+      <br>
+<!--      <div class="loginButtonBox">-->
+<!--        <button class="btn btn-outline-primary button" type="submit" name="signup_button" value="회원가입" onclick=" location.href='A-Zodeur_signUpPage.html' " />회원가입-->
+<!--        <button class="btn btn-outline-primary button" type="submit" onclick="location.href='#'">아이디 찾기</button>-->
+<!--      </div>-->
+    </div>
+  </div>
+    </main>
+  </body>
+</html>

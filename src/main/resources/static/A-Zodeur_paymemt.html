@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            padding : 0;
+            margin: 0;
+        }
+        header{
+            height: 250px;
+            background-color: #e4e0d9;
+            display: grid;
+            grid-template-columns: 250px 1fr 300px;
+        }
+        .logo {
+            width: 9vmax;
+            height: 6vmax;
+            padding: 75px;
+        }
+        .mainName{
+            font-size: 5rem;
+            font-weight: bold;
+            font-family: "나눔스퀘어 네오";
+            padding: 20px 40px;
+            margin: auto;
+            position: relative;
+            left: 100px;
+        }
+    </style>
+    <script>
+        const showCart = function (){$.ajax({
+            url : "/read_carts",
+            method : "post",
+            success : function showCart(carts) {
+                $("#showCarts").empty();
+                let totalCost = 0;
+                $.each(carts, (i, p) => {
+                    const msg = `
+                    <div class="carts table">
+                        <img data-no="${p.product_no}" class="productImg" src="${p.image}" alt="product">
+                        <div class="textBox">
+                            <p class="productName text">${p.productname}</p>
+                            <p class="productPerfumer text">조향사 : ${p.perfumer}</p>
+                        </div>
+                        <div>
+                            <p class="productCost text">1개당<br/> 가격: <span id="${p.product_no}cost">${p.productcost}</span></p><br/>
+                            <button class="btn productDec" data-no="${p.product_no}" id="${p.cartsNo}">-</button>
+                            <span id =${p.product_no}>${p.count}</span>
+                            <button class="btn productInc" data-no="${p.product_no}" id="${p.cartsNo}">+</button>
+                        </div>
+                        <div>
+                            <p class = "text">총 금액: <span id="${p.product_no}totalCost" class="productP">${p.productcost * p.count}</span> </p>
+                        </div>
+                        <div>
+                            <button class="btn btn-danger" id="deleteBtn" data-no="${p.cartsNo}">삭제 </button>
+                        </div>
+                    </div>
+                <hr />`
+                    totalCost = totalCost + (p.productcost * p.count);
+                    $("#showCarts").append(msg)
+                })
+            }
+        })}
+        $(document).ready(function (){
+          showCart()
+        })
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <div>
+           <img class ="logo" src="/css/사진/mola/perfume1.png" alt="logo" />
+        </div>
+        <div class="mainName">
+            A-Zodeur
+        </div>
+    </header>
+    <div>
+        구매하기
+    </div>
+    <div class ="showCarts">
+
+    </div>
+
+    <div class ="userInfo">
+
+    </div>
+    <div class = "">
+
+    </div>
+</body>
+</html>

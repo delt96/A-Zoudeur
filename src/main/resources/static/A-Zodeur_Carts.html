@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+<meta charset="UTF-8">
+<title>장바구니</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+      const showCart = function (){$.ajax({
+          url : "/read_carts",
+          method : "post",
+          success : function showCart(carts){
+              $("#showCarts").empty();
+              let totalCost =0;
+              $.each(carts, (i,p)=>{
+                  const msg = `
+                    <div class="carts table">
+                        <img data-no="${p.product_no}" class="productImg" src="${p.image}" alt="product">
+                        <div class="textBox">
+                            <p class="productName text">${p.productname}</p>
+                            <p class="productPerfumer text">조향사 : ${p.perfumer}</p>
+                        </div>
+                        <div>
+                            <p class="productCost text">1개당<br/> 가격: <span id="${p.product_no}cost">${p.productcost}</span></p><br/>
+                            <button class="btn productDec" data-no="${p.product_no}" id="${p.cartsNo}">-</button>
+                            <span id =${p.product_no}>${p.count}</span>
+                            <button class="btn productInc" data-no="${p.product_no}" id="${p.cartsNo}">+</button>
+                        </div>
+                        <div>
+                            <p class = "text">총 금액: <span id="${p.product_no}totalCost" class="productP">${p.productcost* p.count }</span> </p>
+                        </div>
+                        <div>
+                            <button class="btn btn-danger" id="deleteBtn" data-no="${p.cartsNo}">삭제 </button>
+                        </div>
+                    </div>
+                <hr />`
+                      totalCost = totalCost +(p.productcost * p.count);
+                  $("#showCarts").append(msg)
+              })
+              $("#showFooter").empty();
+              const footermsg = `        <div><button class="btn btn-info" onclick="location.href='/A-zodeur_Store.html'">돌아가기</button></div><div></div><div></div>
+        <div><p class="text">총 합계 : <span id="totalCost">${totalCost}</span></p></div>
+        <div><button class="btn btn-success" id="buy">구매하기</button></div>`
+              $("#showFooter").append(footermsg);
+          }
+      }).catch(err=>console.log(err))};
+    $(document).ready(async function (){
+        try{
+            const isLogin = await $.ajax('is_login');
+            if(!isLogin){
+                alert("로그인이 필요합니다.");
+                location.href="/A-Zodeur_loginPage.html";
+                return;
+            }
+        }catch(err) {
+            console.log(err)}
+        showCart();
+
+        $("#showCarts").on("click", ".productDec", async function (e){
+            const productno =parseInt(e.target.dataset.no);
+            const cartsNo = parseInt(e.target.id);
+            const cost = parseInt($(`#${productno}cost`).text());
+            let count = parseInt($(`#${productno}`).text());
+            if(count>1){
+                --count;
+                await $.ajax({
+                    url : "/saveCount",
+                    type: "put",
+                    data : {count : count, productNum : productno, cartsNo: cartsNo},
+                })
+                showCart();
+            }
+        })
+        $("#showCarts").on("click",".productInc", async function(e){
+            const productno =parseInt(e.target.dataset.no);
+            const cost = parseInt($(`#${productno}cost`).text());
+            const cartsNo = parseInt(e.target.id);
+            let count = parseInt($(`#${productno}`).text());
+             $.ajax({
+                url: "quantity_read",
+                method : "get",
+                data : {productno},
+            }).then(async function(r) {
+                if(r<= count){
+                    alert("수량이 부족합니다.")
+                    return
+                }else {
+                    ++count;
+                    await $.ajax({
+                        url : "/saveCount",
+                        type: "put",
+                        data : {count : count, productNum : productno, cartsNo: cartsNo}
+                    })
+                    showCart();
+                }
+            }).catch(err=> console.log(err))
+        })
+        $("#showCarts").on("click", "#deleteBtn",function (e){
+            const cartsNo =parseInt(e.target.dataset.no);
+            if(confirm("정말로 삭제하시겠습니까 ? ")) {
+                $.ajax({
+                    url: "/carts_delete",
+                    method: "delete",
+                    data: {cartsNo}
+                }).then(()=> {
+                    alert("장바구니에서 삭제되었습니다.")
+                    showCart();
+                }).catch(err=> console.log(err))
+            }
+            else{
+                return;
+            }
+        })
+        $("#buy").on("click", function (){
+            location.href = "/A-Zodeur_paymemt.html"
+        })
+    })
+  </script>
+    <link href="./css/A-Zodeur_Carts.css" rel="stylesheet" />
+</head>
+<body>
+    <hr/>
+    <div id="showCarts">
+
+
+    </div>
+    <div class="footer table" id="showFooter">
+
+    </div>
+    <form action="/A-Zodeur_StorePayment.html" method="post" id="storeForm">
+
+    </form>
+</body>
+</html>

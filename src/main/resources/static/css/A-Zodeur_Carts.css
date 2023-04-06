@@ -1,0 +1,27 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: "나눔스퀘어 ac";
+
+}
+
+.table{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+}
+.productImg{
+    width :150px;
+    height: 150px;
+    object-fit: contain;
+}
+.text{
+    font-size: 15px;
+    text-align: center;
+}
+.productName{
+    font-size: 18px;
+    font-weight: bold;
+}

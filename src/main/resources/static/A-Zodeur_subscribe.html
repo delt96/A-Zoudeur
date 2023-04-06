@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="css/A-Zodeur_subscribe.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <title>A-Zodeur Subscribe</title>
+  <script src="js/A-Zodeur_subscribe.js"></script>
+  <script>
+    $(document).ready( async function (){
+      try{
+        const isLogin = await $.ajax('is_login');
+        if(!isLogin){
+          alert("로그인이 필요합니다.")
+          location.href="/A-Zodeur_loginPage.html";
+          return;
+        }
+      }catch(err) {
+        console.log(err)
+      }
+      $(".submitButton").on("click", async function (){
+        let isAddress = await parseInt($.ajax("/isAddress"));
+        if(isAddress > 0){
+          location.href = '/A-Zodeur_subscribePayment.html'
+        }else{
+          location.href='/A-Zodeur_Address.html'
+        }
+      }).catch(err)
+        console.log(err)
+    })
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Step.1<div>내가 원하는 베이스 노트<div class="material-symbols-outlined help">help</div> 정하기</div></h1>
+    <div class="Explanation">베이스 노트는 향의 기본 성격과 지속적인 향을 결정합니다.<br>
+      향수를 뿌렸을 때 가장 많이 느낄 수 있는 향입니다.</div>
+    <div class="headerHome"><img class="home" alt="home" src="css/사진/home.png" onclick="location.href='index.html'"></div>
+
+  </header>
+  <main>
+    <form action="#" method="get">
+      <div class="selectBox">
+        <div class="citrus">
+          <input id="citrus"type="radio" name="perfume" value="citrus">
+          <img src="./css/사진/mola/citrus.png" alt="citrus">
+        </div>
+        <div class="green">
+          <input id="green" type="radio" name="perfume" value="green">
+          <img src="./css/사진/mola/green.png" alt="green">
+        </div>
+        <div class="herb">
+          <input id="herb" type="radio" name="perfume" value="herb">
+          <img src="./css/사진/mola/herb.png" alt="herb">
+        </div>
+        <div class="floral">
+          <input id="floral" type="radio" name="perfume" value="floral">
+          <img src="./css/사진/mola/rose.png" alt="floral">
+        </div>
+        <div class="vanilla">
+          <input id="vanilla" type="radio" name="perfume" value="vanilla">
+          <img src="./css/사진/mola/vanilla.png" alt="vanilla">
+        </div>
+        <div class="whiteMusk">
+          <input id="whiteMusk" type="radio" name="perfume" value="whiteMusk">
+          <img src="./css/사진/mola/white musk.png" alt="whiteMusk">
+        </div>
+        <div class="woody">
+          <input id="woody" type="radio" name="perfume" value="woody">
+          <img src="./css/사진/mola/woody.png" alt="woody">
+        </div >
+        <div class="citrusText t">레몬,베르가못,오렌지,라임 등과 같은 감귤류의 향기를 말합니다.<br><br>신선하고 상큼하면서 동시에 달콤한 향을 가지고 있습니다.</div>
+        <div class="greenText t">풀이나 나뭇잎을 베어내거나 비볐을때의 향기를 말합니다.<br><br>신선하고 깔끔한 향기를 가지고 있습니다.</div>
+        <div class="herbText t">페퍼민트, 라벤더, 로즈플라워 등과 같은 허브 향기를 말합니다.<br><br>은은하면서 깔끔한 허브향을 가지고잇습니다.</div>
+        <div class="floralText t">장미,자스민,프리지아,라일락 등과 같은 꽃의 향기를 말합니다.<br><br>세련되고 여성적이면서 활동적인 향을 가지고 있습니다. </div>
+        <div class="whiteMuskText t">비누,세제, 화장품에서 맡을 수 있는 인공적인 향기를 말합니다.<br><br>가볍고 부드러우며 포근한 향을 가지고 있습니다.</div>
+        <div class="vanillaText t">바닐라의 달콤하고 부드러운 향기를 말합니다.<br><br>따듯하고 부드럽고 달콤한 향기를 가지고 있습니다.</div>
+        <div class="woodyText t">나무가 주는 냄새, 나무의 이미지가 생각나는향기입니다.<br><br>중후하면서 부드럽고 따듯한 향기를 가지고 있습니다.</div>
+      </div>
+      <div class="submitButtonBox">
+        <button class="submitButton" >선택하기</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
