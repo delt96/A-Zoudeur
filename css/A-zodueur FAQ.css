@@ -1,0 +1,38 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.mainGrid{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: 200px 1000px 200px;
+  grid-template-areas: 
+  "header header header"
+  "main main main"
+  "footer footer footer"; 
+}
+header{
+  grid-area: header;
+  display: flex;
+  align-items: flex-end;
+  background-color: #e4e0d9;
+}
+main{
+  grid-area: main;
+}
+footer{
+  grid-area: footer;
+  background-color: #e4e0d9;
+  display: flex;
+  justify-content: space-around;
+}
+.logo{
+  width: 170px;
+  height: 120px;
+  padding: 20px;
+}
+.Main_Name{
+  font-size: 50px;
+  font-weight: bold; 
+  margin: 0 0 20px 50px;
+}
