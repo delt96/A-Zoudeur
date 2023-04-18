@@ -17,16 +17,21 @@ public class ProductController {
     @Autowired
     private ProductService service;
 
+    //상품 불러오기 시작
     @PostMapping("/product_read")
     public  @ModelAttribute ResponseEntity<List<Product>> read(){
         List<Product> productAll = service.read();
         return ResponseEntity.ok(productAll);
     }
+    //상품 불러오기 끝
+
+    //상품 재고 확인 시작
     @GetMapping("/quantity_read")
     public ResponseEntity<Integer> read_quantity(Integer productno){
         Product product = service.read_quantity(productno);
         return ResponseEntity.ok(product.getProductquantity());
     }
+    //상품 재고 확인 끝
 
 
 }

@@ -32,8 +32,6 @@ public class MemberService {
     public void changeInfo(Member member){
         dao.save(member);
     }
-//    public Integer isAddress(String azodeurId){
-//       return dao.countByAzodeurIdAndAddress(azodeurId);
-//    }
+
 
 }
