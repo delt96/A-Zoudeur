@@ -8,25 +8,25 @@ const printProduct = async function (){
                 const productno = `${p.productno}`;
                 const product =
                     `
-            <img data-no="${p.productno}" class="product"src="${p.image}" alt="product">
-            <div class="textBox">
-              <p class="productName text">${p.productname}</p>
-              <p class="productPerfumer text">조향사 : ${p.perfumer}</p>
-            </div>
-            <div>
-              <p class="productCost text" >1개 당 가격: </br>${p.productcost}원</p>
-              <button class="btn productDec" data-no="${p.productno}">-</button>
-              <span id="${p.productno}">1</span>
-              <button class="btn productInc" data-no="${p.productno}">+</button><hr>
-              <button class="btn btn-success" id="basket" data-no="${p.productno}">장바구니</button>
-              <button class="btn btn-success" id="Buy" data-no="${p.productno}">구매하기</button>`
-                if(productno.substring(4,6)== "01"){
+                    <img data-no="${p.productno}" class="product"src="${p.image}" alt="product">
+                    <div class="textBox">
+                      <p class="productName text">${p.productname}</p>
+                      <p class="productPerfumer text">조향사 : ${p.perfumer}</p>
+                    </div>
+                    <div>
+                      <p class="productCost text" >1개 당 가격: </br>${p.productcost}원</p>
+                      <button class="btn productDec" data-no="${p.productno}">-</button>
+                      <span id="${p.productno}">1</span>
+                      <button class="btn productInc" data-no="${p.productno}">+</button><hr>
+                      <button class="btn btn-success" id="basket" data-no="${p.productno}">장바구니</button>
+                      <button class="btn btn-success" id="Buy" data-no="${p.productno}">구매하기</button>`
+                if(p.category == "1"){
                     $(".imgPerfume").append(product);
                 }
-                else if(productno.substring(4,6) == "02"){
+                else if(p.category == "2"){
                     $(".imgHandCream").append(product);
                 }
-                else if(productno.substring(4,6) == "03"){
+                else if(p.category == "3"){
                     $(".imgEtc").append(product);
                 }
             })

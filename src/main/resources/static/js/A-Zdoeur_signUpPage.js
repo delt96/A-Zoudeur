@@ -45,5 +45,8 @@ $(".PwTextCheck").on("blur", function(){
     }
   })
 
+  $(".addressButton").on("click", ()=>{
+
+  })
 
 })

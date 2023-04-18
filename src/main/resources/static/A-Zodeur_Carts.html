@@ -46,6 +46,7 @@
               $("#showFooter").append(footermsg);
           }
       }).catch(err=>console.log(err))};
+
     $(document).ready(async function (){
         try{
             const isLogin = await $.ajax('is_login');
@@ -73,6 +74,7 @@
                 showCart();
             }
         })
+
         $("#showCarts").on("click",".productInc", async function(e){
             const productno =parseInt(e.target.dataset.no);
             const cost = parseInt($(`#${productno}cost`).text());
@@ -97,6 +99,7 @@
                 }
             }).catch(err=> console.log(err))
         })
+
         $("#showCarts").on("click", "#deleteBtn",function (e){
             const cartsNo =parseInt(e.target.dataset.no);
             if(confirm("정말로 삭제하시겠습니까 ? ")) {
@@ -113,9 +116,13 @@
                 return;
             }
         })
-        $("#buy").on("click", function (){
-            location.href = "/A-Zodeur_paymemt.html"
+        $("body").on("click","#buy",()=>{
+            const totalCost = parseInt($("#totalCost").text());
+            const storeForm = $("#storeForm");
+
+            storeForm.submit();
         })
+
     })
   </script>
     <link href="./css/A-Zodeur_Carts.css" rel="stylesheet" />
@@ -129,8 +136,7 @@
     <div class="footer table" id="showFooter">
 
     </div>
-    <form action="/A-Zodeur_StorePayment.html" method="post" id="storeForm">
-
+    <form action="/payment" method="get" name="storeForm" id="storeForm">
     </form>
     <div>
 

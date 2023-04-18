@@ -15,9 +15,10 @@
           const userName = $(".nameText").val();
           const azodeurId = $(".userName").val();
           const azodeurPw= $(".PwText").val();
-          const birthday = $(".birthday").val();
-          const gender = $('input[name=gender]:checked').val();
+          const birthday = $(".birthday1").val();
+          const gender = ($(".birthday2").val()/2 == 0) ?1 : 0 ;
           const email = $("#email").val() +"@" + $("#otherMail").val();
+          const phoneNumber= $(".phoneNumber").val();
           const PwTextCheck = $(".PwTextCheck").val();
 
           if(userName === ""){
@@ -41,11 +42,17 @@
             return
           }
           try {
-            await $.ajax('/id_check?azodeurId='+azodeurId)
+            await $.ajax('/id_check?azodeurId='+azodeurId).catch(err=>{
+              alert("아이디가 중복되었습니다.");
+              $(".userName").val("");
+              $(".userName").focus();
+              throw err;
+              return;
+            })
             await $.ajax({
               url : "/create",
               method : "post",
-              data : { userName, azodeurId, azodeurPw,birthday, gender, email }
+              data : { userName, azodeurId, azodeurPw,birthday, gender, email, phoneNumber }
             })
             alert("회원가입을 축하합니다.");
             location.href="index.html";
@@ -58,7 +65,6 @@
   </head>
   <body>
     <main>
-<!--      <form action="/create" method="post" name="signup">-->
         <div>
           <p class="text mainText">회원가입 페이지</p>
           <div class="signUpTable">
@@ -76,11 +82,15 @@
               <li><div class="l text"><br>비밀번호 재확인</div></li>
               <li><input class="PwTextCheck"type="password"  placeholder="비밀번호를 다시 입력해주세요." maxlength="15" size="30"   >
                 <div id="nonePwTextCheck">비밀번호가 똑같지 않습니다.</div></li>
-              <li><br><div class="text"  >생년월일을 입력하세요.</div></li>
-              <li><input type="date" name="birthday" class="birthday"/></li>
-              <li><div class="text"><br><br>성별을 선택해주세요.</div></li>
-              <li><input type="radio" name="gender" value="0" />남 &nbsp;&nbsp;&nbsp;
-                <input type="radio" name="gender" value="1" />여</li>
+              <li><br><div class="text"  >주민등록번호를 입력하세요.</div></li>
+              <li><input type="text" name="birthday1" class="birthday1" maxlength="6" placeholder="주민번호 앞자리"/> - <input type="text" name="birthday2" class="birthday2" placeholder="뒷자리 1자리" maxlength="1" ></li>
+              <li><div class="text"><br/>핸드폰번호를 입력해주세요.</div></li>
+              <li><input type="text" name="phoneNumber" size="25" class="phoneNumber" placeholder="핸드폰 번호를 입력해주세요." maxlength="12"></li>
+              <li><div class="text">주소를 입력해주세요.</div></li>
+              <li>
+                <input type="text" name="address" id="address" readonly placeholder="주소를 입력해주세요." />
+                <button class="addressButton">주소검색</button>
+              </li>
               <li><div class="text"><br><br>본인확인이메일을 적어주세요.</div></li>
               <li>
                 <input type="text" name="newMail" id="email" /> @ <select name="otherMail" id="otherMail">
@@ -91,12 +101,11 @@
               </li>
               <li>
                 <br/><br>
-                <button class="submitButton"type="submit"/>제출하기
+                <button class="submitButton">제출하기</button>
               </li>
             </ul>
           </div>
         </div>
-<!--        </form>-->
 
     </main>
   </body>

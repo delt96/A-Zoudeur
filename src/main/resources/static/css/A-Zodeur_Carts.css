@@ -2,7 +2,9 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: "나눔스퀘어 ac";
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .table{
@@ -24,4 +26,10 @@ body{
 .productName{
     font-size: 18px;
     font-weight: bold;
+}
+.showCarts{
+    width: 1500px;
+}
+.footer{
+    width: 1500px;
 }
