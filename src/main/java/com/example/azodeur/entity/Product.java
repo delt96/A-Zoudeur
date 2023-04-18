@@ -20,7 +20,6 @@ public class Product {
     private Integer productcost;
     private Integer productquantity;
     private String perfumer;
-    private String imageno;
-    private String image;
+    private Integer imageno;
 
 }

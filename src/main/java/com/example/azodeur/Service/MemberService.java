@@ -11,6 +11,7 @@ public class MemberService {
     private MemberRepository dao;
 
     public void signup (Member member){
+        member.setStatus(1);
         dao.save(member);
     }
     public boolean idcheck(String azodeurId){

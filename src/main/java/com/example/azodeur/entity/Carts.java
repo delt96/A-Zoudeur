@@ -26,9 +26,8 @@ public class Carts {
     @Column(name = "CARTS_NO")
     private Integer cartsNo;
     private Integer count;
-    private Integer productNum;
-    @OneToOne
-    @JoinColumn(name = "productno")
+    @ManyToOne
+    @JoinColumn(name = "product_no")
     private Product productList ;
     private String azodeurId;
 }

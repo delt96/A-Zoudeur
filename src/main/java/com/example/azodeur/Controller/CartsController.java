@@ -16,6 +16,8 @@ import java.util.List;
 public class CartsController {
     @Autowired
     private CartsService service;
+    private String azodeurId;
+
     //cart 불러오기 시작
     @PostMapping("/read_carts")
     public ResponseEntity<List<CartsList>> read_carts(HttpSession session){
@@ -51,7 +53,7 @@ public class CartsController {
 
     //cart 물건 있는지 확인 시작
     @GetMapping("/readCartsNo")
-    public ResponseEntity<Integer> readCartsNo(HttpSession session, String productNum){
+    public ResponseEntity<Integer> readCartsNo(HttpSession session, Integer productNum){
         String azodeurId = (String)session.getAttribute("azodeurId");
         return ResponseEntity.ok(service.readCartsNo(azodeurId,productNum));
     }

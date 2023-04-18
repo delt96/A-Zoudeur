@@ -18,9 +18,12 @@ public class Member {
     @Id
     private String azodeurId;
     private String azodeurPw;
-    private LocalDate birthday;
+    private String birthday;
     private Integer gender;
     private String email;
     private String address;
+
+    private String phoneNumber;
+    private Integer status;
 
 }

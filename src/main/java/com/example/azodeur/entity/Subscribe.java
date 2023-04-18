@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -19,7 +21,7 @@ public class Subscribe {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQE_subscribeNo")
     private Integer subscribeNo;
-    private String subscribeDate;
+    private Date subscribeDate;
     private String azodeurId;
     private Long subscribeStatus;
     private String selectOdeur;
